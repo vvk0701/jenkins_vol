@@ -1,0 +1,72 @@
+Started by user unknown or anonymous
+Rebuilds build #[8mha:////4JuttjY1Vz1dfxL/2w1pO27qGxivElsbuN96U2Q9tYCWAAAAoR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBjH9rPwkfeei1MSS1PiA/JTg5MScVH1TAA8T3NDLAAAA[0m5
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/Create_PodScale
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential 34bb70bf-146d-499d-8b6e-8f77afbadb33
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/Create_PodScale/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/vvk0701/vmc_vvk # timeout=10
+Fetching upstream changes from https://github.com/vvk0701/vmc_vvk
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+using GIT_ASKPASS to set credentials GITHUB_NEW
+ > git fetch --tags --force --progress -- https://github.com/vvk0701/vmc_vvk +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision c3a972acc8ec0185f9efd66447bcc9a1955601fa (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f c3a972acc8ec0185f9efd66447bcc9a1955601fa # timeout=10
+Commit message: "Update tkcpods.sh"
+ > git rev-list --no-walk beb54915e1a9aff54637dc266a701afa75f2a3f7 # timeout=10
+[Create_PodScale] $ /bin/sh -xe /tmp/jenkins17682269135654752803.sh
++ export KUBECTL_VSPHERE_PASSWORD=K0I*oX0kyPj*nKB
++ kubectl vsphere login --server=192.168.123.2 -u cloudadmin@vmc.local --insecure-skip-tls-verify --tanzu-kubernetes-cluster-name tkg-cluster50 --tanzu-kubernetes-cluster-namespace wcpns6
+
+Logged in successfully.
+
+You have access to the following contexts:
+   192.168.123.2
+   tkg-cluster50
+   tkg-cluster6
+   wcpns1
+   wcpns10
+   wcpns2
+   wcpns3
+   wcpns4
+   wcpns5
+   wcpns6
+   wcpns7
+   wcpns8
+   wcpns9
+
+If the context you wish to use is not in this list, you may need to try
+logging in again later, or contact your cluster administrator.
+
+To change context, use `kubectl config use-context <workload name>`
++ kubectl config use-context tkg-cluster50
+Switched to context "tkg-cluster50".
++ kubectl apply -f psp.yaml
+clusterrole.rbac.authorization.k8s.io/psp:privileged unchanged
+clusterrolebinding.rbac.authorization.k8s.io/all:psp:privileged unchanged
+podsecuritypolicy.policy/vmware-system-privileged unchanged
+namespace/vmware-system-auth unchanged
+rolebinding.rbac.authorization.k8s.io/psp:vmware-system-privileged:vmware-system-auth unchanged
++ chmod 777 tkcpods.sh
++ ./tkcpods.sh
++ kubectl apply -f psp.yaml
+clusterrole.rbac.authorization.k8s.io/psp:privileged unchanged
+clusterrolebinding.rbac.authorization.k8s.io/all:psp:privileged unchanged
+podsecuritypolicy.policy/vmware-system-privileged unchanged
+namespace/vmware-system-auth unchanged
+rolebinding.rbac.authorization.k8s.io/psp:vmware-system-privileged:vmware-system-auth unchanged
++ (( i=1 ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-1
+error: error validating "replicaset.yaml": error validating data: ValidationError(Deployment.spec.template): unknown field "tolerations" in io.k8s.api.core.v1.PodTemplateSpec; if you choose to ignore these errors, turn validation off with --validate=false
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

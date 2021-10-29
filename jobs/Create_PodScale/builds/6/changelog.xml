@@ -1,0 +1,18 @@
+commit c3a972acc8ec0185f9efd66447bcc9a1955601fa
+tree 9b89b767fd4f6b901254584a9a602b36c6f5399e
+parent bad7ea2400f818ce4091f8e0274766ee5485b059
+author vvk0701 <56976878+vvk0701@users.noreply.github.com> 2021-10-28 12:28:51 +0530
+committer GitHub <noreply@github.com> 2021-10-28 12:28:51 +0530
+
+    Update tkcpods.sh
+
+:100644 100644 dd79bbc840a0f5c3232d03900d0abe1e014cd5c2 f912027bcf2af5d62de9b97618bfad23869dc3b5 M	tkcpods.sh
+commit bad7ea2400f818ce4091f8e0274766ee5485b059
+tree 2ef6e1c62ef19209c4af46e8dff66d8a7af5a170
+parent beb54915e1a9aff54637dc266a701afa75f2a3f7
+author vvk0701 <56976878+vvk0701@users.noreply.github.com> 2021-10-28 12:28:02 +0530
+committer GitHub <noreply@github.com> 2021-10-28 12:28:02 +0530
+
+    Update replicaset.yaml
+
+:100644 100644 9870e11ec24f5c930c25f19c11ce603fec6485e9 08192e9ef779aa36cc5f33659be322a276917ecb M	replicaset.yaml

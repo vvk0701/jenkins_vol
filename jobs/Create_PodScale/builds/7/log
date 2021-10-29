@@ -1,0 +1,3039 @@
+Started by user unknown or anonymous
+Rebuilds build #[8mha:////4DIn/O3qEDGRRlKwGb+odly1267eyCcoVdrNtxO5EEbgAAAAoR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBjH9rPwkfeei1MSS1PiA/JTg5MScVH0zALVC1UnLAAAA[0m6
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/Create_PodScale
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential 34bb70bf-146d-499d-8b6e-8f77afbadb33
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/Create_PodScale/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/vvk0701/vmc_vvk # timeout=10
+Fetching upstream changes from https://github.com/vvk0701/vmc_vvk
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+using GIT_ASKPASS to set credentials GITHUB_NEW
+ > git fetch --tags --force --progress -- https://github.com/vvk0701/vmc_vvk +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 466140219ab5750cc76698d35816bc27caba8036 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 466140219ab5750cc76698d35816bc27caba8036 # timeout=10
+Commit message: "Update tkcpods.sh"
+ > git rev-list --no-walk c3a972acc8ec0185f9efd66447bcc9a1955601fa # timeout=10
+[Create_PodScale] $ /bin/sh -xe /tmp/jenkins9184394759813917289.sh
++ export KUBECTL_VSPHERE_PASSWORD=K0I*oX0kyPj*nKB
++ kubectl vsphere login --server=192.168.123.2 -u cloudadmin@vmc.local --insecure-skip-tls-verify --tanzu-kubernetes-cluster-name tkg-cluster50 --tanzu-kubernetes-cluster-namespace wcpns6
+
+Logged in successfully.
+
+You have access to the following contexts:
+   192.168.123.2
+   tkg-cluster50
+   tkg-cluster6
+   wcpns1
+   wcpns10
+   wcpns2
+   wcpns3
+   wcpns4
+   wcpns5
+   wcpns6
+   wcpns7
+   wcpns8
+   wcpns9
+
+If the context you wish to use is not in this list, you may need to try
+logging in again later, or contact your cluster administrator.
+
+To change context, use `kubectl config use-context <workload name>`
++ kubectl config use-context tkg-cluster50
+Switched to context "tkg-cluster50".
++ kubectl apply -f psp.yaml
+clusterrole.rbac.authorization.k8s.io/psp:privileged unchanged
+clusterrolebinding.rbac.authorization.k8s.io/all:psp:privileged unchanged
+podsecuritypolicy.policy/vmware-system-privileged unchanged
+namespace/vmware-system-auth unchanged
+rolebinding.rbac.authorization.k8s.io/psp:vmware-system-privileged:vmware-system-auth unchanged
++ chmod 777 tkcpods.sh
++ ./tkcpods.sh
++ (( i=1 ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-1
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-2
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-3
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-4
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-5
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-6
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-7
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-8
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-9
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-10
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-11
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-12
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-13
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-14
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-15
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-16
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-17
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-18
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-19
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-20
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-21
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-22
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-23
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-24
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-25
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-26
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-27
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-28
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-29
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-30
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-31
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-32
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-33
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-34
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-35
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-36
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-37
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-38
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-39
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-40
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-41
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-42
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-43
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-44
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-45
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-46
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-47
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-48
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-49
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-50
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-51
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-52
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-53
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-54
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-55
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-56
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-57
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-58
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-59
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-60
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-61
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-62
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-63
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-64
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-65
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-66
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-67
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-68
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-69
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-70
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-71
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-72
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-73
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-74
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-75
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-76
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-77
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-78
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-79
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-80
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-81
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-82
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-83
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-84
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-85
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-86
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-87
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-88
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-89
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-90
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-91
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-92
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-93
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-94
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-95
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-96
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-97
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-98
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-99
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-100
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-101
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-102
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-103
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-104
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-105
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-106
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-107
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-108
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-109
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-110
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-111
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-112
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-113
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-114
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-115
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-116
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-117
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-118
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-119
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-120
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-121
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-122
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-123
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-124
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-125
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-126
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-127
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-128
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-129
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-130
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-131
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-132
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-133
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-134
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-135
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-136
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-137
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-138
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-139
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-140
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-141
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-142
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-143
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-144
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-145
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-146
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-147
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-148
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-149
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-150
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-151
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-152
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-153
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-154
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-155
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-156
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-157
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-158
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-159
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-160
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-161
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-162
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-163
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-164
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-165
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-166
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-167
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-168
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-169
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-170
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-171
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-172
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-173
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-174
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-175
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-176
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-177
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-178
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-179
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-180
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-181
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-182
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-183
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-184
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-185
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-186
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-187
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-188
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-189
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-190
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-191
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-192
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-193
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-194
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-195
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-196
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-197
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-198
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-199
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-200
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-201
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-202
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-203
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-204
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-205
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-206
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-207
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-208
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-209
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-210
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-211
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-212
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-213
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-214
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-215
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-216
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-217
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-218
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-219
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-220
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-221
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-222
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-223
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-224
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-225
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-226
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-227
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-228
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-229
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-230
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-231
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-232
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-233
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-234
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-235
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-236
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-237
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-238
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-239
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-240
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-241
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-242
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-243
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-244
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-245
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-246
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-247
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-248
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-249
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-250
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-251
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-252
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-253
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-254
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-255
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-256
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-257
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-258
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-259
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-260
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-261
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-262
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-263
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-264
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-265
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-266
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-267
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-268
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-269
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-270
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-271
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-272
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-273
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-274
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-275
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-276
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-277
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-278
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-279
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-280
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-281
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-282
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-283
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-284
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-285
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-286
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-287
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-288
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-289
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-290
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-291
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-292
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-293
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-294
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-295
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-296
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-297
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-298
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-299
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-300
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-301
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-302
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-303
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-304
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-305
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-306
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-307
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-308
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-309
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-310
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-311
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-312
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-313
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-314
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-315
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-316
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-317
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-318
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-319
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-320
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-321
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-322
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-323
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-324
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-325
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-326
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-327
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-328
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-329
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-330
+deployment.apps/nginx-deployment configured
++ sleep 5
++ (( i++  ))
++ (( i<=800 ))
++ echo 'creating tkc namespace '
+creating tkc namespace 
++ echo 'create tkc pods'
+create tkc pods
++ kubectl apply -f replicaset.yaml -n tkc-331
+Error from server: error when retrieving current configuration of:
+Resource: "apps/v1, Resource=deployments", GroupVersionKind: "apps/v1, Kind=Deployment"
+Name: "nginx-deployment", Namespace: "tkc-331"
+from server for: "replicaset.yaml": rpc error: code = Unknown desc = OK: HTTP status code 200; transport: missing content-type field
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

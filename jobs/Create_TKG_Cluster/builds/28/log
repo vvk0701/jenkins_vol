@@ -1,0 +1,4119 @@
+Started by user unknown or anonymous
+Rebuilds build #[8mha:////4L5E8tKH0p+oKx0xISenRrYHYlPcefXfWuwTfL0iW7HCAAAAph+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgYp/az8JH3notTEktT4EG/3eOec0uKS1CJ9I3MA/O/9BM8AAAA=[0m27
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/Create_TKG_Cluster
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential 34bb70bf-146d-499d-8b6e-8f77afbadb33
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/Create_TKG_Cluster/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/vvk0701/vmc_vvk # timeout=10
+Fetching upstream changes from https://github.com/vvk0701/vmc_vvk
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+using GIT_ASKPASS to set credentials GITHUB_NEW
+ > git fetch --tags --force --progress -- https://github.com/vvk0701/vmc_vvk +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision beb54915e1a9aff54637dc266a701afa75f2a3f7 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f beb54915e1a9aff54637dc266a701afa75f2a3f7 # timeout=10
+Commit message: "Update jenkinsFile.groovy"
+ > git rev-list --no-walk beb54915e1a9aff54637dc266a701afa75f2a3f7 # timeout=10
+[Create_TKG_Cluster] $ /bin/sh -xe /tmp/jenkins3891879793290553408.sh
++ export KUBECTL_VSPHERE_PASSWORD=K0I*oX0kyPj*nKB
++ kubectl vsphere login --server=192.168.123.2 -u cloudadmin@vmc.local --insecure-skip-tls-verify
+
+Logged in successfully.
+
+You have access to the following contexts:
+   192.168.123.2
+   tkg-cluster6
+   wcpns1
+   wcpns10
+   wcpns2
+   wcpns3
+   wcpns4
+   wcpns5
+   wcpns6
+   wcpns7
+   wcpns8
+   wcpns9
+
+If the context you wish to use is not in this list, you may need to try
+logging in again later, or contact your cluster administrator.
+
+To change context, use `kubectl config use-context <workload name>`
++ kubectl get pods -A
+NAMESPACE                      NAME                                                       READY   STATUS    RESTARTS   AGE
+default                        pod-with-multiple-pvc                                      1/1     Running   0          37m
+kube-system                    calico-kube-controllers-7847bdc646-gwqtp                   1/1     Running   0          120m
+kube-system                    calico-node-hpkxl                                          1/1     Running   0          120m
+kube-system                    calico-node-jfthp                                          1/1     Running   0          119m
+kube-system                    calico-node-mslqk                                          1/1     Running   0          118m
+kube-system                    calico-node-qsdz2                                          1/1     Running   0          118m
+kube-system                    calico-node-wjgmf                                          1/1     Running   0          118m
+kube-system                    coredns-77d7f46ccd-pw462                                   1/1     Running   0          120m
+kube-system                    coredns-77d7f46ccd-wlmq2                                   1/1     Running   0          120m
+kube-system                    docker-registry-tkg-cluster6-control-plane-78fr5           1/1     Running   0          120m
+kube-system                    docker-registry-tkg-cluster6-np-1-d45xh-d85765f76-6lnmh    1/1     Running   0          118m
+kube-system                    docker-registry-tkg-cluster6-np-1-d45xh-d85765f76-nm4sm    1/1     Running   0          118m
+kube-system                    docker-registry-tkg-cluster6-np-2-mqdhj-96d55d6c9-7fgls    1/1     Running   0          118m
+kube-system                    docker-registry-tkg-cluster6-np-2-mqdhj-96d55d6c9-8jp9v    1/1     Running   0          118m
+kube-system                    etcd-tkg-cluster6-control-plane-78fr5                      1/1     Running   0          120m
+kube-system                    kube-apiserver-tkg-cluster6-control-plane-78fr5            1/1     Running   0          120m
+kube-system                    kube-controller-manager-tkg-cluster6-control-plane-78fr5   1/1     Running   0          120m
+kube-system                    kube-proxy-5xzmh                                           1/1     Running   0          118m
+kube-system                    kube-proxy-78zkr                                           1/1     Running   0          120m
+kube-system                    kube-proxy-bp67s                                           1/1     Running   0          119m
+kube-system                    kube-proxy-sz4tj                                           1/1     Running   0          118m
+kube-system                    kube-proxy-vptqb                                           1/1     Running   0          118m
+kube-system                    kube-scheduler-tkg-cluster6-control-plane-78fr5            1/1     Running   0          120m
+vmware-system-auth             guest-cluster-auth-svc-jppdr                               1/1     Running   0          120m
+vmware-system-cloud-provider   guest-cluster-cloud-provider-599c7b65b9-5vb9p              1/1     Running   0          120m
+vmware-system-csi              vsphere-csi-controller-5994799984-2mj58                    6/6     Running   0          120m
+vmware-system-csi              vsphere-csi-node-5t9j5                                     3/3     Running   0          120m
+vmware-system-csi              vsphere-csi-node-8j6xv                                     3/3     Running   0          118m
+vmware-system-csi              vsphere-csi-node-9rjbd                                     3/3     Running   0          119m
+vmware-system-csi              vsphere-csi-node-ll547                                     3/3     Running   0          118m
+vmware-system-csi              vsphere-csi-node-s287g                                     3/3     Running   0          118m
++ kubectl config use-context 192.168.123.2
+Switched to context "192.168.123.2".
++ chmod 777 createtkgclusters.sh
++ ./createtkgclusters.sh 11 50
++ start=11
++ end=50
++ (( j=11 ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster11
++ '[' 11 -le 5 ']'
++ '[' 11 -gt 5 ']'
++ '[' 11 -lt 25 ']'
+++ sed 's/{{MY_NAME}}/tkg-cluster11/g'
+++ cat gcm2_alpha2.yaml
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster11
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster11
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster11 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 12:56:16 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster12
++ '[' 12 -le 5 ']'
++ '[' 12 -gt 5 ']'
++ '[' 12 -lt 25 ']'
+++ cat gcm2_alpha2.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster12/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster12
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster12
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster12 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 13:01:37 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster13
++ '[' 13 -le 5 ']'
++ '[' 13 -gt 5 ']'
++ '[' 13 -lt 25 ']'
+++ cat gcm2_alpha2.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster13/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster13
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster13
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
++ kubectl apply -f -
+      serviceDomain: cluster.local'
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster13 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 13:06:58 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster14
++ '[' 14 -le 5 ']'
++ '[' 14 -gt 5 ']'
++ '[' 14 -lt 25 ']'
+++ cat gcm2_alpha2.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster14/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster14
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster14
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster14 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 13:12:19 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster15
++ '[' 15 -le 5 ']'
++ '[' 15 -gt 5 ']'
++ '[' 15 -lt 25 ']'
+++ cat gcm2_alpha2.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster15/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster15
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster15
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster15 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 13:17:40 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster16
++ '[' 16 -le 5 ']'
++ '[' 16 -gt 5 ']'
++ '[' 16 -lt 25 ']'
+++ cat gcm2_alpha2.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster16/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster16
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster16
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster16 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 13:23:01 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster17
++ '[' 17 -le 5 ']'
++ '[' 17 -gt 5 ']'
++ '[' 17 -lt 25 ']'
+++ cat gcm2_alpha2.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster17/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster17
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster17
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster17 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 13:28:23 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster18
++ '[' 18 -le 5 ']'
++ '[' 18 -gt 5 ']'
++ '[' 18 -lt 25 ']'
+++ cat gcm2_alpha2.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster18/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster18
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster18
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster18 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 13:33:43 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster19
++ '[' 19 -le 5 ']'
++ '[' 19 -gt 5 ']'
++ '[' 19 -lt 25 ']'
+++ cat gcm2_alpha2.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster19/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster19
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster19
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster19 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 13:39:05 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster20
++ '[' 20 -le 5 ']'
++ '[' 20 -gt 5 ']'
++ '[' 20 -lt 25 ']'
+++ cat gcm2_alpha2.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster20/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster20
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster20
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster20 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 13:44:26 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster21
++ '[' 21 -le 5 ']'
++ '[' 21 -gt 5 ']'
++ '[' 21 -lt 25 ']'
+++ cat gcm2_alpha2.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster21/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster21
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster21
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster21 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 13:49:47 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster22
++ '[' 22 -le 5 ']'
++ '[' 22 -gt 5 ']'
++ '[' 22 -lt 25 ']'
+++ cat gcm2_alpha2.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster22/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster22
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ kubectl apply -f -
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster22
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster22 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 13:55:08 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster23
++ '[' 23 -le 5 ']'
++ '[' 23 -gt 5 ']'
++ '[' 23 -lt 25 ']'
+++ cat gcm2_alpha2.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster23/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster23
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster23
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster23 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 14:00:29 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster24
++ '[' 24 -le 5 ']'
++ '[' 24 -gt 5 ']'
++ '[' 24 -lt 25 ']'
+++ cat gcm2_alpha2.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster24/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster24
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ kubectl apply -f -
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster24
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster24 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 14:05:50 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster25
++ '[' 25 -le 5 ']'
++ '[' 25 -gt 5 ']'
++ '[' 25 -lt 25 ']'
++ '[' 25 -gt 24 ']'
++ '[' 25 -lt 47 ']'
+++ cat gcm2_alpha2_g.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster25/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster25
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster25
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster25 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 14:11:12 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster26
++ '[' 26 -le 5 ']'
++ '[' 26 -gt 5 ']'
++ '[' 26 -lt 25 ']'
++ '[' 26 -gt 24 ']'
++ '[' 26 -lt 47 ']'
+++ cat gcm2_alpha2_g.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster26/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster26
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster26
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster26 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 14:16:33 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster27
++ '[' 27 -le 5 ']'
++ '[' 27 -gt 5 ']'
++ '[' 27 -lt 25 ']'
++ '[' 27 -gt 24 ']'
++ '[' 27 -lt 47 ']'
+++ cat gcm2_alpha2_g.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster27/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster27
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster27
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster27 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 14:21:54 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster28
++ '[' 28 -le 5 ']'
++ '[' 28 -gt 5 ']'
++ '[' 28 -lt 25 ']'
++ '[' 28 -gt 24 ']'
++ '[' 28 -lt 47 ']'
+++ cat gcm2_alpha2_g.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster28/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster28
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster28
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster28 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 14:27:15 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster29
++ '[' 29 -le 5 ']'
++ '[' 29 -gt 5 ']'
++ '[' 29 -lt 25 ']'
++ '[' 29 -gt 24 ']'
++ '[' 29 -lt 47 ']'
+++ cat gcm2_alpha2_g.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster29/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster29
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster29
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster29 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 14:32:36 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster30
++ '[' 30 -le 5 ']'
++ '[' 30 -gt 5 ']'
++ '[' 30 -lt 25 ']'
++ '[' 30 -gt 24 ']'
++ '[' 30 -lt 47 ']'
+++ cat gcm2_alpha2_g.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster30/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster30
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster30
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster30 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 14:37:57 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster31
++ '[' 31 -le 5 ']'
++ '[' 31 -gt 5 ']'
++ '[' 31 -lt 25 ']'
++ '[' 31 -gt 24 ']'
++ '[' 31 -lt 47 ']'
+++ cat gcm2_alpha2_g.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster31/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster31
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster31
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster31 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 14:43:18 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster32
++ '[' 32 -le 5 ']'
++ '[' 32 -gt 5 ']'
++ '[' 32 -lt 25 ']'
++ '[' 32 -gt 24 ']'
++ '[' 32 -lt 47 ']'
+++ cat gcm2_alpha2_g.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster32/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster32
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster32
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster32 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 14:48:39 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster33
++ '[' 33 -le 5 ']'
++ '[' 33 -gt 5 ']'
++ '[' 33 -lt 25 ']'
++ '[' 33 -gt 24 ']'
++ '[' 33 -lt 47 ']'
+++ cat gcm2_alpha2_g.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster33/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster33
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster33
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster33 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 14:54:01 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster34
++ '[' 34 -le 5 ']'
++ '[' 34 -gt 5 ']'
++ '[' 34 -lt 25 ']'
++ '[' 34 -gt 24 ']'
++ '[' 34 -lt 47 ']'
+++ cat gcm2_alpha2_g.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster34/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster34
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster34
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster34 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 14:59:22 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster35
++ '[' 35 -le 5 ']'
++ '[' 35 -gt 5 ']'
++ '[' 35 -lt 25 ']'
++ '[' 35 -gt 24 ']'
++ '[' 35 -lt 47 ']'
+++ cat gcm2_alpha2_g.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster35/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster35
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster35
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster35 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 15:04:43 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster36
++ '[' 36 -le 5 ']'
++ '[' 36 -gt 5 ']'
++ '[' 36 -lt 25 ']'
++ '[' 36 -gt 24 ']'
++ '[' 36 -lt 47 ']'
+++ cat gcm2_alpha2_g.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster36/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster36
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster36
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster36 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 15:10:04 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster37
++ '[' 37 -le 5 ']'
++ '[' 37 -gt 5 ']'
++ '[' 37 -lt 25 ']'
++ '[' 37 -gt 24 ']'
++ '[' 37 -lt 47 ']'
+++ cat gcm2_alpha2_g.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster37/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster37
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ kubectl apply -f -
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster37
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster37 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 15:15:26 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster38
++ '[' 38 -le 5 ']'
++ '[' 38 -gt 5 ']'
++ '[' 38 -lt 25 ']'
++ '[' 38 -gt 24 ']'
++ '[' 38 -lt 47 ']'
+++ cat gcm2_alpha2_g.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster38/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster38
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster38
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster38 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 15:20:46 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster39
++ '[' 39 -le 5 ']'
++ '[' 39 -gt 5 ']'
++ '[' 39 -lt 25 ']'
++ '[' 39 -gt 24 ']'
++ '[' 39 -lt 47 ']'
+++ cat gcm2_alpha2_g.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster39/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster39
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster39
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster39 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 15:26:08 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster40
++ '[' 40 -le 5 ']'
++ '[' 40 -gt 5 ']'
++ '[' 40 -lt 25 ']'
++ '[' 40 -gt 24 ']'
++ '[' 40 -lt 47 ']'
+++ cat gcm2_alpha2_g.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster40/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster40
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster40
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster40 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 15:31:28 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster41
++ '[' 41 -le 5 ']'
++ '[' 41 -gt 5 ']'
++ '[' 41 -lt 25 ']'
++ '[' 41 -gt 24 ']'
++ '[' 41 -lt 47 ']'
+++ cat gcm2_alpha2_g.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster41/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster41
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster41
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster41 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 15:36:50 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster42
++ '[' 42 -le 5 ']'
++ '[' 42 -gt 5 ']'
++ '[' 42 -lt 25 ']'
++ '[' 42 -gt 24 ']'
++ '[' 42 -lt 47 ']'
+++ sed 's/{{MY_NAME}}/tkg-cluster42/g'
+++ cat gcm2_alpha2_g.yaml
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster42
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster42
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster42 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 15:42:11 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster43
++ '[' 43 -le 5 ']'
++ '[' 43 -gt 5 ']'
++ '[' 43 -lt 25 ']'
++ '[' 43 -gt 24 ']'
++ '[' 43 -lt 47 ']'
+++ cat gcm2_alpha2_g.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster43/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster43
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ kubectl apply -f -
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster43
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster43 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 15:47:33 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster44
++ '[' 44 -le 5 ']'
++ '[' 44 -gt 5 ']'
++ '[' 44 -lt 25 ']'
++ '[' 44 -gt 24 ']'
++ '[' 44 -lt 47 ']'
+++ cat gcm2_alpha2_g.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster44/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster44
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster44
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster44 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 15:52:53 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster45
++ '[' 45 -le 5 ']'
++ '[' 45 -gt 5 ']'
++ '[' 45 -lt 25 ']'
++ '[' 45 -gt 24 ']'
++ '[' 45 -lt 47 ']'
+++ cat gcm2_alpha2_g.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster45/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster45
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster45
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster45 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 15:58:16 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster46
++ '[' 46 -le 5 ']'
++ '[' 46 -gt 5 ']'
++ '[' 46 -lt 25 ']'
++ '[' 46 -gt 24 ']'
++ '[' 46 -lt 47 ']'
+++ cat gcm2_alpha2_g.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster46/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster46
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster46
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster46 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 16:03:36 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster47
++ '[' 47 -le 5 ']'
++ '[' 47 -gt 5 ']'
++ '[' 47 -lt 25 ']'
++ '[' 47 -gt 24 ']'
++ '[' 47 -lt 47 ']'
++ '[' 47 -ge 47 ']'
+++ expr 56 - 47
++ a=9
++ tkg_ns=wcpns9
+++ cat gcm150.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster47/g'
+++ sed 's/{{MY_NS}}/wcpns9/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster47
+  namespace: wcpns9
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 3
+      vmClass: best-effort-large
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 75
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 75
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=900
++ kubectl apply -f -
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster47
+  namespace: wcpns9
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 3
+      vmClass: best-effort-large
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 75
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 75
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster47 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 16:08:58 UTC 2021'
++ sleep 900
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster48
++ '[' 48 -le 5 ']'
++ '[' 48 -gt 5 ']'
++ '[' 48 -lt 25 ']'
++ '[' 48 -gt 24 ']'
++ '[' 48 -lt 47 ']'
++ '[' 48 -ge 47 ']'
+++ expr 56 - 48
++ a=8
++ tkg_ns=wcpns8
+++ cat gcm150.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster48/g'
+++ sed 's/{{MY_NS}}/wcpns8/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster48
+  namespace: wcpns8
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 3
+      vmClass: best-effort-large
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 75
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 75
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=900
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster48
+  namespace: wcpns8
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 3
+      vmClass: best-effort-large
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 75
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 75
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster48 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 16:23:59 UTC 2021'
++ sleep 900
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster49
++ '[' 49 -le 5 ']'
++ '[' 49 -gt 5 ']'
++ '[' 49 -lt 25 ']'
++ '[' 49 -gt 24 ']'
++ '[' 49 -lt 47 ']'
++ '[' 49 -ge 47 ']'
+++ expr 56 - 49
++ a=7
++ tkg_ns=wcpns7
+++ cat gcm150.yaml
+++ sed 's/{{MY_NS}}/wcpns7/g'
+++ sed 's/{{MY_NAME}}/tkg-cluster49/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster49
+  namespace: wcpns7
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 3
+      vmClass: best-effort-large
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 75
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 75
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=900
++ kubectl apply -f -
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster49
+  namespace: wcpns7
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 3
+      vmClass: best-effort-large
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 75
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 75
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster49 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 16:39:03 UTC 2021'
++ sleep 900
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster50
++ '[' 50 -le 5 ']'
++ '[' 50 -gt 5 ']'
++ '[' 50 -lt 25 ']'
++ '[' 50 -gt 24 ']'
++ '[' 50 -lt 47 ']'
++ '[' 50 -ge 47 ']'
+++ expr 56 - 50
++ a=6
++ tkg_ns=wcpns6
+++ cat gcm150.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster50/g'
+++ sed 's/{{MY_NS}}/wcpns6/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster50
+  namespace: wcpns6
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 3
+      vmClass: best-effort-large
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 75
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 75
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=900
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster50
+  namespace: wcpns6
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 3
+      vmClass: best-effort-large
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 75
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 75
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster50 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 16:54:06 UTC 2021'
++ sleep 900
++ (( j++  ))
++ (( j<=50 ))
+Finished: SUCCESS

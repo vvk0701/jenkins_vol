@@ -1,0 +1,11 @@
+Started by user unknown or anonymous
+java.lang.NoClassDefFoundError: Could not initialize class org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxResolvingClassLoader
+	at org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.GroovySandbox.createSecureClassLoader(GroovySandbox.java:204)
+	at org.jenkinsci.plugins.workflow.cps.CpsGroovyShellFactory.makeClassLoader(CpsGroovyShellFactory.java:114)
+	at org.jenkinsci.plugins.workflow.cps.CpsGroovyShellFactory.build(CpsGroovyShellFactory.java:120)
+	at org.jenkinsci.plugins.workflow.cps.CpsFlowExecution.parseScript(CpsFlowExecution.java:568)
+	at org.jenkinsci.plugins.workflow.cps.CpsFlowExecution.start(CpsFlowExecution.java:523)
+	at org.jenkinsci.plugins.workflow.job.WorkflowRun.run(WorkflowRun.java:334)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+Finished: FAILURE

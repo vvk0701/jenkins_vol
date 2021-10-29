@@ -1,0 +1,33 @@
+Started by user unknown or anonymous
+Checking out git https://github.com/vvk0701/vmc_vvk into /var/jenkins_home/workspace/VMC_WCP_TKG_SCALE_PIPELINE@script to read jenkinsFile.groovy
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential 34bb70bf-146d-499d-8b6e-8f77afbadb33
+Cloning the remote Git repository
+Cloning repository https://github.com/vvk0701/vmc_vvk
+ > git init /var/jenkins_home/workspace/VMC_WCP_TKG_SCALE_PIPELINE@script # timeout=10
+Fetching upstream changes from https://github.com/vvk0701/vmc_vvk
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+using GIT_ASKPASS to set credentials GITHUB_NEW
+ > git fetch --tags --force --progress -- https://github.com/vvk0701/vmc_vvk +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/vvk0701/vmc_vvk # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision beb54915e1a9aff54637dc266a701afa75f2a3f7 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f beb54915e1a9aff54637dc266a701afa75f2a3f7 # timeout=10
+Commit message: "Update jenkinsFile.groovy"
+First time build. Skipping changelog.
+Running in Durability level: MAX_SURVIVABILITY
+java.lang.NoClassDefFoundError: Could not initialize class org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxResolvingClassLoader
+	at org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.GroovySandbox.createSecureClassLoader(GroovySandbox.java:204)
+	at org.jenkinsci.plugins.workflow.cps.CpsGroovyShellFactory.makeClassLoader(CpsGroovyShellFactory.java:114)
+	at org.jenkinsci.plugins.workflow.cps.CpsGroovyShellFactory.build(CpsGroovyShellFactory.java:120)
+	at org.jenkinsci.plugins.workflow.cps.CpsFlowExecution.parseScript(CpsFlowExecution.java:568)
+	at org.jenkinsci.plugins.workflow.cps.CpsFlowExecution.start(CpsFlowExecution.java:523)
+	at org.jenkinsci.plugins.workflow.job.WorkflowRun.run(WorkflowRun.java:337)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+Finished: FAILURE
