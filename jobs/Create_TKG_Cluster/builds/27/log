@@ -1,0 +1,1227 @@
+Started by user unknown or anonymous
+Rebuilds build #[8mha:////4CLK+K3cfLKyF+pr8SV4bYCVY8hBRcTziLe7WA2pjLdRAAAAph+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgYp/az8JH3notTEktT4EG/3eOec0uKS1CJ9IzMAat/6c88AAAA=[0m26
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/Create_TKG_Cluster
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential 34bb70bf-146d-499d-8b6e-8f77afbadb33
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/Create_TKG_Cluster/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/vvk0701/vmc_vvk # timeout=10
+Fetching upstream changes from https://github.com/vvk0701/vmc_vvk
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+using GIT_ASKPASS to set credentials GITHUB_NEW
+ > git fetch --tags --force --progress -- https://github.com/vvk0701/vmc_vvk +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision beb54915e1a9aff54637dc266a701afa75f2a3f7 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f beb54915e1a9aff54637dc266a701afa75f2a3f7 # timeout=10
+Commit message: "Update jenkinsFile.groovy"
+ > git rev-list --no-walk beb54915e1a9aff54637dc266a701afa75f2a3f7 # timeout=10
+[Create_TKG_Cluster] $ /bin/sh -xe /tmp/jenkins10063411440834150687.sh
++ export KUBECTL_VSPHERE_PASSWORD=K0I*oX0kyPj*nKB
++ kubectl vsphere login --server=192.168.123.2 -u cloudadmin@vmc.local --insecure-skip-tls-verify
+
+Logged in successfully.
+
+You have access to the following contexts:
+   192.168.123.2
+   wcpns1
+   wcpns10
+   wcpns2
+   wcpns3
+   wcpns4
+   wcpns5
+   wcpns6
+   wcpns7
+   wcpns8
+   wcpns9
+
+If the context you wish to use is not in this list, you may need to try
+logging in again later, or contact your cluster administrator.
+
+To change context, use `kubectl config use-context <workload name>`
++ kubectl get pods -A
+NAMESPACE                                   NAME                                                              READY   STATUS      RESTARTS   AGE
+kube-system                                 coredns-689d589965-hgfz2                                          1/1     Running     0          13h
+kube-system                                 coredns-689d589965-hjvtb                                          1/1     Running     0          13h
+kube-system                                 coredns-689d589965-vnr7s                                          1/1     Running     5          13h
+kube-system                                 docker-registry-42248e12e612480b1ef32716e3e70233                  1/1     Running     0          13h
+kube-system                                 docker-registry-4224c0f2e93b732e7176bd6c57cb96ce                  1/1     Running     0          13h
+kube-system                                 docker-registry-4224e98520746346ed25e78ef3912d74                  1/1     Running     0          13h
+kube-system                                 etcd-42248e12e612480b1ef32716e3e70233                             1/1     Running     0          13h
+kube-system                                 etcd-4224c0f2e93b732e7176bd6c57cb96ce                             1/1     Running     0          13h
+kube-system                                 etcd-4224e98520746346ed25e78ef3912d74                             1/1     Running     0          13h
+kube-system                                 kube-apiserver-42248e12e612480b1ef32716e3e70233                   1/1     Running     2          13h
+kube-system                                 kube-apiserver-4224c0f2e93b732e7176bd6c57cb96ce                   1/1     Running     2          13h
+kube-system                                 kube-apiserver-4224e98520746346ed25e78ef3912d74                   1/1     Running     2          13h
+kube-system                                 kube-controller-manager-42248e12e612480b1ef32716e3e70233          1/1     Running     0          13h
+kube-system                                 kube-controller-manager-4224c0f2e93b732e7176bd6c57cb96ce          1/1     Running     1          13h
+kube-system                                 kube-controller-manager-4224e98520746346ed25e78ef3912d74          1/1     Running     1          13h
+kube-system                                 kube-proxy-5ftr5                                                  1/1     Running     0          13h
+kube-system                                 kube-proxy-6jptw                                                  1/1     Running     0          13h
+kube-system                                 kube-proxy-gv4rd                                                  1/1     Running     0          13h
+kube-system                                 kube-scheduler-42248e12e612480b1ef32716e3e70233                   2/2     Running     1          13h
+kube-system                                 kube-scheduler-4224c0f2e93b732e7176bd6c57cb96ce                   2/2     Running     3          13h
+kube-system                                 kube-scheduler-4224e98520746346ed25e78ef3912d74                   2/2     Running     5          13h
+kube-system                                 kubectl-plugin-vsphere-42248e12e612480b1ef32716e3e70233           1/1     Running     3          13h
+kube-system                                 kubectl-plugin-vsphere-4224c0f2e93b732e7176bd6c57cb96ce           1/1     Running     4          13h
+kube-system                                 kubectl-plugin-vsphere-4224e98520746346ed25e78ef3912d74           1/1     Running     4          13h
+kube-system                                 wcp-authproxy-42248e12e612480b1ef32716e3e70233                    1/1     Running     0          13h
+kube-system                                 wcp-authproxy-4224c0f2e93b732e7176bd6c57cb96ce                    1/1     Running     0          13h
+kube-system                                 wcp-authproxy-4224e98520746346ed25e78ef3912d74                    1/1     Running     0          13h
+kube-system                                 wcp-fip-42248e12e612480b1ef32716e3e70233                          1/1     Running     0          13h
+kube-system                                 wcp-fip-4224c0f2e93b732e7176bd6c57cb96ce                          1/1     Running     0          13h
+kube-system                                 wcp-fip-4224e98520746346ed25e78ef3912d74                          1/1     Running     0          13h
+svc-tmc-c55                                 tmc-agent-installer-27254057-9h8fd                                0/1     Completed   0          25s
+vmware-system-appplatform-operator-system   vmware-system-appplatform-operator-mgr-0                          1/1     Running     0          13h
+vmware-system-capw                          capi-controller-manager-584fd8896-5v4cw                           2/2     Running     1          13h
+vmware-system-capw                          capi-controller-manager-584fd8896-g9jvf                           2/2     Running     0          13h
+vmware-system-capw                          capi-controller-manager-584fd8896-k2jr8                           2/2     Running     3          13h
+vmware-system-capw                          capi-kubeadm-bootstrap-controller-manager-7c66845b75-gsg8t        2/2     Running     3          13h
+vmware-system-capw                          capi-kubeadm-bootstrap-controller-manager-7c66845b75-qt55p        2/2     Running     1          13h
+vmware-system-capw                          capi-kubeadm-bootstrap-controller-manager-7c66845b75-xlh2h        2/2     Running     0          13h
+vmware-system-capw                          capi-kubeadm-bootstrap-webhook-85b6b6f795-8vv2b                   2/2     Running     0          13h
+vmware-system-capw                          capi-kubeadm-bootstrap-webhook-85b6b6f795-fvsqr                   2/2     Running     0          13h
+vmware-system-capw                          capi-kubeadm-bootstrap-webhook-85b6b6f795-qq4hd                   2/2     Running     1          13h
+vmware-system-capw                          capi-kubeadm-control-plane-controller-manager-698b658fd9-pcxtw    2/2     Running     0          13h
+vmware-system-capw                          capi-kubeadm-control-plane-controller-manager-698b658fd9-q5nwf    2/2     Running     1          13h
+vmware-system-capw                          capi-kubeadm-control-plane-controller-manager-698b658fd9-rtcrm    2/2     Running     3          13h
+vmware-system-capw                          capi-kubeadm-control-plane-webhook-54b4c9857c-c6pk5               2/2     Running     1          13h
+vmware-system-capw                          capi-kubeadm-control-plane-webhook-54b4c9857c-wk62x               2/2     Running     0          13h
+vmware-system-capw                          capi-kubeadm-control-plane-webhook-54b4c9857c-xh5gs               2/2     Running     0          13h
+vmware-system-capw                          capi-webhook-f48c7ff58-2b84z                                      2/2     Running     1          13h
+vmware-system-capw                          capi-webhook-f48c7ff58-9pfm2                                      2/2     Running     0          13h
+vmware-system-capw                          capi-webhook-f48c7ff58-9qwc9                                      2/2     Running     0          13h
+vmware-system-capw                          capw-controller-manager-56d949cf45-c845j                          2/2     Running     1          13h
+vmware-system-capw                          capw-controller-manager-56d949cf45-f6xf2                          2/2     Running     2          13h
+vmware-system-capw                          capw-controller-manager-56d949cf45-f7kbf                          2/2     Running     0          13h
+vmware-system-capw                          capw-webhook-5445f7d67b-btb7s                                     2/2     Running     1          13h
+vmware-system-capw                          capw-webhook-5445f7d67b-ctvgl                                     2/2     Running     0          13h
+vmware-system-capw                          capw-webhook-5445f7d67b-n8lkq                                     2/2     Running     0          13h
+vmware-system-cert-manager                  cert-manager-799b5bbfdf-tkjkx                                     1/1     Running     0          13h
+vmware-system-cert-manager                  cert-manager-cainjector-69c886766f-rjd26                          1/1     Running     3          13h
+vmware-system-cert-manager                  cert-manager-webhook-657b4fdd6c-742pz                             1/1     Running     0          13h
+vmware-system-csi                           vsphere-csi-controller-8f8f6d8bf-mxgf8                            6/6     Running     9          13h
+vmware-system-kubeimage                     image-controller-5d8499f48b-m4ttd                                 1/1     Running     1          13h
+vmware-system-license-operator              vmware-system-license-operator-controller-manager-9d65b7844pjrt   1/1     Running     0          13h
+vmware-system-license-operator              vmware-system-license-operator-controller-manager-9d65b784fhc4g   1/1     Running     0          13h
+vmware-system-license-operator              vmware-system-license-operator-controller-manager-9d65b784hrhtm   1/1     Running     0          13h
+vmware-system-monitoring                    telegraf-6z7dq                                                    2/2     Running     0          13h
+vmware-system-monitoring                    telegraf-cdklj                                                    2/2     Running     0          13h
+vmware-system-monitoring                    telegraf-ks8lz                                                    2/2     Running     0          13h
+vmware-system-nsop                          vmware-system-nsop-controller-manager-869fbd485c-ctpvq            1/1     Running     2          13h
+vmware-system-nsop                          vmware-system-nsop-controller-manager-869fbd485c-hmbcs            1/1     Running     1          13h
+vmware-system-nsop                          vmware-system-nsop-controller-manager-869fbd485c-wfpsc            1/1     Running     0          13h
+vmware-system-nsx                           nsx-ncp-7c6578d9fd-8l6bg                                          1/1     Running     3          13h
+vmware-system-registry                      vmware-registry-controller-manager-856fd64db4-mrsll               2/2     Running     3          13h
+vmware-system-tkg                           masterproxy-tkgs-plugin-24v2s                                     1/1     Running     0          13h
+vmware-system-tkg                           masterproxy-tkgs-plugin-jtt5h                                     1/1     Running     0          13h
+vmware-system-tkg                           masterproxy-tkgs-plugin-v9l9w                                     1/1     Running     0          13h
+vmware-system-tkg                           tkgs-plugin-server-679f79fd9b-l8fxl                               1/1     Running     0          13h
+vmware-system-tkg                           tkgs-plugin-server-679f79fd9b-rm6xq                               1/1     Running     0          13h
+vmware-system-tkg                           tkgs-plugin-server-679f79fd9b-wklzm                               1/1     Running     0          13h
+vmware-system-tkg                           vmware-system-tkg-controller-manager-78c746fdf7-6d5sf             2/2     Running     1          13h
+vmware-system-tkg                           vmware-system-tkg-controller-manager-78c746fdf7-v7rrz             2/2     Running     2          13h
+vmware-system-tkg                           vmware-system-tkg-controller-manager-78c746fdf7-zxh7n             2/2     Running     0          13h
+vmware-system-tkg                           vmware-system-tkg-webhook-c9ff5c794-9nxtm                         2/2     Running     0          13h
+vmware-system-tkg                           vmware-system-tkg-webhook-c9ff5c794-qr66f                         2/2     Running     0          13h
+vmware-system-tkg                           vmware-system-tkg-webhook-c9ff5c794-z2px8                         2/2     Running     0          13h
+vmware-system-ucs                           upgrade-compatibility-service-66b9d7f8f5-g7wls                    1/1     Running     0          13h
+vmware-system-ucs                           upgrade-compatibility-service-66b9d7f8f5-v29cr                    1/1     Running     0          13h
+vmware-system-ucs                           upgrade-compatibility-service-66b9d7f8f5-vcdpl                    1/1     Running     0          13h
+vmware-system-vmop                          vmware-system-vmop-controller-manager-799d745d79-bgzbw            2/2     Running     0          13h
+vmware-system-vmop                          vmware-system-vmop-controller-manager-799d745d79-dz95l            2/2     Running     3          13h
+vmware-system-vmop                          vmware-system-vmop-controller-manager-799d745d79-v66qp            2/2     Running     2          13h
++ kubectl config use-context 192.168.123.2
+Switched to context "192.168.123.2".
++ chmod 777 createtkgclusters.sh
++ ./createtkgclusters.sh 1 50
++ start=1
++ end=50
++ (( j=1 ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster1
++ '[' 1 -le 5 ']'
++ tkg_ns=wcpns1
+++ cat gcm46.yaml
+++ sed 's/{{MY_NS}}/wcpns1/g'
+++ sed 's/{{MY_NAME}}/tkg-cluster1/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster1
+  namespace: wcpns1
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 3
+      vmClass: best-effort-large
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 23
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 23
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: antrea
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=420
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster1
+  namespace: wcpns1
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 3
+      vmClass: best-effort-large
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 23
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 23
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: antrea
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster1 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 10:17:26 UTC 2021'
++ sleep 420
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster2
++ '[' 2 -le 5 ']'
++ tkg_ns=wcpns2
+++ cat gcm46.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster2/g'
+++ sed 's/{{MY_NS}}/wcpns2/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster2
+  namespace: wcpns2
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 3
+      vmClass: best-effort-large
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 23
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 23
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: antrea
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=420
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster2
+  namespace: wcpns2
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 3
+      vmClass: best-effort-large
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 23
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 23
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: antrea
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster2 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 10:24:27 UTC 2021'
++ sleep 420
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster3
++ '[' 3 -le 5 ']'
++ tkg_ns=wcpns3
+++ cat gcm46.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster3/g'
+++ sed 's/{{MY_NS}}/wcpns3/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster3
+  namespace: wcpns3
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 3
+      vmClass: best-effort-large
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 23
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 23
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: antrea
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=420
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster3
+  namespace: wcpns3
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 3
+      vmClass: best-effort-large
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 23
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 23
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: antrea
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
++ kubectl apply -f -
+      serviceDomain: cluster.local'
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster3 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 10:31:29 UTC 2021'
++ sleep 420
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster4
++ '[' 4 -le 5 ']'
++ tkg_ns=wcpns4
+++ cat gcm46.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster4/g'
+++ sed 's/{{MY_NS}}/wcpns4/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster4
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 3
+      vmClass: best-effort-large
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 23
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 23
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: antrea
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=420
++ kubectl apply -f -
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster4
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 3
+      vmClass: best-effort-large
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 23
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 23
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: antrea
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster4 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 10:38:30 UTC 2021'
++ sleep 420
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster5
++ '[' 5 -le 5 ']'
++ tkg_ns=wcpns5
+++ cat gcm46.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster5/g'
+++ sed 's/{{MY_NS}}/wcpns5/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster5
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 3
+      vmClass: best-effort-large
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 23
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 23
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: antrea
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=420
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster5
+  namespace: wcpns5
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 3
+      vmClass: best-effort-large
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 23
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 23
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: antrea
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster5 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 10:45:32 UTC 2021'
++ sleep 420
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster6
++ '[' 6 -le 5 ']'
++ '[' 6 -gt 5 ']'
++ '[' 6 -lt 25 ']'
+++ cat gcm2_alpha2.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster6/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster6
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster6
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster6 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 10:52:33 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster7
++ '[' 7 -le 5 ']'
++ '[' 7 -gt 5 ']'
++ '[' 7 -lt 25 ']'
+++ cat gcm2_alpha2.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster7/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster7
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ kubectl apply -f -
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster7
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster7 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 10:57:55 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster8
++ '[' 8 -le 5 ']'
++ '[' 8 -gt 5 ']'
++ '[' 8 -lt 25 ']'
+++ cat gcm2_alpha2.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster8/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster8
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster8
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster8 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 11:03:15 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster9
++ '[' 9 -le 5 ']'
++ '[' 9 -gt 5 ']'
++ '[' 9 -lt 25 ']'
+++ cat gcm2_alpha2.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster9/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster9
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster9
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster9 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 11:08:37 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster10
++ '[' 10 -le 5 ']'
++ '[' 10 -gt 5 ']'
++ '[' 10 -lt 25 ']'
+++ cat gcm2_alpha2.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster10/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster10
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster10
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+tanzukubernetescluster.run.tanzu.vmware.com/tkg-cluster10 created
+++ kubectl get tkc
+No resources found in default namespace.
++ output=
+++ date
++ date_time='Tue Oct 26 11:13:58 UTC 2021'
++ sleep 320
++ (( j++  ))
++ (( j<=50 ))
++ tkg_name=tkg-cluster11
++ '[' 11 -le 5 ']'
++ '[' 11 -gt 5 ']'
++ '[' 11 -lt 25 ']'
+++ cat gcm2_alpha2.yaml
+++ sed 's/{{MY_NAME}}/tkg-cluster11/g'
++ template='apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster11
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ sleep_var=320
++ echo 'apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkg-cluster11
+  namespace: wcpns4
+spec:
+  topology:
+    controlPlane:
+      tkr:
+        reference:
+          name: v1.20.7---vmware.1-tkg.1.7fb9067
+      replicas: 1
+      vmClass: best-effort-medium
+      storageClass: vmc-workload-storage-policy-cluster-1
+    nodePools:
+    - replicas: 2
+      name: np-1
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+      labels:
+        k1: v1
+        k2: v2
+      taints:
+      - key: k1
+        value: v1
+        effect: NoSchedule
+    - replicas: 2
+      name: np-2
+      vmClass: best-effort-xsmall
+      storageClass: vmc-workload-storage-policy-cluster-1
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks:
+        - 198.51.100.0/12
+      pods:
+        cidrBlocks:
+        - 192.0.2.0/16
+      serviceDomain: cluster.local'
++ kubectl apply -f -
+error: unable to recognize "STDIN": no matches for kind "TanzuKubernetesCluster" in version "run.tanzu.vmware.com/v1alpha2"
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

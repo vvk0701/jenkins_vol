@@ -1,0 +1,13 @@
+Started by user unknown or anonymous
+Rebuilds build #[8mha:////4CeP3DLyO0B1j5e96ueOg6/wE82r9lMfKKFCEWj7uqlnAAAArh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgYl/az8JP0wX+f4cOeA+BBv9/hgZ0cf1/gAzwBXH08/V31DAwCBilj71wAAAA==[0m10
+Running in Durability level: MAX_SURVIVABILITY
+java.lang.NoClassDefFoundError: Could not initialize class org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxResolvingClassLoader
+	at org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.GroovySandbox.createSecureClassLoader(GroovySandbox.java:204)
+	at org.jenkinsci.plugins.workflow.cps.CpsGroovyShellFactory.makeClassLoader(CpsGroovyShellFactory.java:114)
+	at org.jenkinsci.plugins.workflow.cps.CpsGroovyShellFactory.build(CpsGroovyShellFactory.java:120)
+	at org.jenkinsci.plugins.workflow.cps.CpsFlowExecution.parseScript(CpsFlowExecution.java:568)
+	at org.jenkinsci.plugins.workflow.cps.CpsFlowExecution.start(CpsFlowExecution.java:523)
+	at org.jenkinsci.plugins.workflow.job.WorkflowRun.run(WorkflowRun.java:337)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:432)
+Finished: FAILURE

@@ -1,0 +1,29 @@
+Started by user unknown or anonymous
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/Create_PodScale
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential 34bb70bf-146d-499d-8b6e-8f77afbadb33
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/Create_PodScale/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/vvk0701/vmc_vvk # timeout=10
+Fetching upstream changes from https://github.com/vvk0701/vmc_vvk
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+using GIT_ASKPASS to set credentials GITHUB_NEW
+ > git fetch --tags --force --progress -- https://github.com/vvk0701/vmc_vvk +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision beb54915e1a9aff54637dc266a701afa75f2a3f7 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f beb54915e1a9aff54637dc266a701afa75f2a3f7 # timeout=10
+Commit message: "Update jenkinsFile.groovy"
+ > git rev-list --no-walk beb54915e1a9aff54637dc266a701afa75f2a3f7 # timeout=10
+[Create_PodScale] $ /bin/sh -xe /tmp/jenkins14805044465153658103.sh
++ export KUBECTL_VSPHERE_PASSWORD=K0I*oX0kyPj*nKB
++ kubectl vsphere login --server=192.168.123.2 -u cloudadmin@vmc.local --insecure-skip-tls-verify --tanzu-kubernetes-cluster-name -cluster --tanzu-kubernetes-cluster-namespace wcpns6
+
+time="2021-10-26T18:39:48Z" level=warning msg="Error occurred: could not find Tanzu Kubernetes cluster apiserver for -cluster in namespace wcpns6"
+time="2021-10-26T18:39:48Z" level=error msg="Login failed: bad request"
+time="2021-10-26T18:39:48Z" level=error msg="Failed login to Tanzu Kubernetes cluster -cluster: bad request"
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

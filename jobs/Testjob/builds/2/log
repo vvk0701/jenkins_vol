@@ -1,0 +1,9 @@
+Started by upstream project "[8mha:////4KF1BRiSbnQVKzElFfNKsLR2CRQ0OFiIjXMKhrFcsyWwAAAAnB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAweoBn6WflJ+iGpxSUBmQWpQFtT9QHd+SVaxwAAAA==[0mTestPipeline" build number [8mha:////4Lbx5UYAvdXw7n8I05dFClT0GpVpQLD5erQNuNlDgIQRAAAAnR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBmH9rPwk/ZDU4pKAzIJUoK2p+kYAugYcHMgAAAA=[0m2
+originally caused by:
+ Started by user [8mha:////4O+7WaZrdeuSXCe13zffueChRTst+GL3EjqzTUZ1m63dAAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgYe/dLi1CL90qTSvJJSAHVI/MXBAAAA[0mvivek
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/Testjob
+[Testjob] $ /bin/sh -xe /tmp/jenkins6205710035154687554.sh
++ echo Passing
+Passing
+Finished: SUCCESS
