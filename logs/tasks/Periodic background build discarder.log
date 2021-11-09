@@ -1,6 +1,16 @@
-Started at Fri Oct 29 13:18:52 UTC 2021
+Started at Tue Nov 09 11:19:12 UTC 2021
+Processing Create_PodScale
+Offering Create_PodScale to Project Build Discarder
+Processing Create_PVC
+Offering Create_PVC to Project Build Discarder
+Processing Create_TKG_Cluster
+Offering Create_TKG_Cluster to Project Build Discarder
+Processing Create_WCP_NS
+Offering Create_WCP_NS to Project Build Discarder
 Processing Testjob
 Offering Testjob to Project Build Discarder
 Processing TestPipeline
 Offering TestPipeline to Project Build Discarder
-Finished at Fri Oct 29 13:18:52 UTC 2021. 2ms
+Processing VMC_WCP_TKG_SCALE_PIPELINE
+Offering VMC_WCP_TKG_SCALE_PIPELINE to Project Build Discarder
+Finished at Tue Nov 09 11:19:12 UTC 2021. 4ms
