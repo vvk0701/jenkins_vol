@@ -16,8 +16,7 @@
           <trim>false</trim>
         </hudson.model.StringParameterDefinition>
         <hudson.model.StringParameterDefinition>
-          <name>password</name>
-          <defaultValue>YL+!8ApTLtxkzM8</defaultValue>
+          <name>Kubectl_Password</name>
           <trim>false</trim>
         </hudson.model.StringParameterDefinition>
         <hudson.model.StringParameterDefinition>
@@ -41,7 +40,7 @@
 export vc_sso_username=cloudadmin@vmc.local
 export namespace_prefix=&apos;wcpns&apos;
 export cluster_name=&apos;Cluster-1&apos;
-export password=&quot;$password&quot;
+export password=&quot;$Kubectl_Password&quot;
 export server=&quot;$server&quot;
 export number_of_namespace=&quot;$no_of_ns&quot;
 echo $password
