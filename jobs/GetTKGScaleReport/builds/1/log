@@ -1,0 +1,52 @@
+Started by user [8mha:////4O+7WaZrdeuSXCe13zffueChRTst+GL3EjqzTUZ1m63dAAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgYe/dLi1CL90qTSvJJSAHVI/MXBAAAA[0mvivek
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/GetTKGScaleReport
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential b5a1582a-99cd-4025-8bc5-17c5131dabb3
+Cloning the remote Git repository
+Cloning repository https://github.com/vvk0701/vmc_vvk
+ > git init /var/jenkins_home/workspace/GetTKGScaleReport # timeout=10
+Fetching upstream changes from https://github.com/vvk0701/vmc_vvk
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- https://github.com/vvk0701/vmc_vvk +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/vvk0701/vmc_vvk # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision f8e726540abd461e2d9fd60be9b314a06c8c1db4 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f f8e726540abd461e2d9fd60be9b314a06c8c1db4 # timeout=10
+Commit message: "Update scale_report.sh"
+First time build. Skipping changelog.
+[GetTKGScaleReport] $ /bin/sh -xe /tmp/jenkins13112867872283633122.sh
++ export KUBECTL_VSPHERE_PASSWORD=hpYFENBimZg!+47
++ chmod 777 scale_report.sh
++ ./scale_report.sh
+time="2021-12-09T09:48:12Z" level=fatal msg="Password is required."
+Switched to context "192.168.123.2".
+=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#>
+Number of NameSpaces: 
+error: You must be logged in to the server (Unauthorized)
+0
+Number of TKC Clusters: 
+error: You must be logged in to the server (Unauthorized)
+0
++#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
+error: You must be logged in to the server (Unauthorized)
++#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
+Login to Large TKC Cluster
+time="2021-12-09T09:48:13Z" level=fatal msg="Password is required."
+Number of Running Nginx Pods: 
+error: You must be logged in to the server (Unauthorized)
+0
+Number of Nginx pods in Pending state: 
+error: You must be logged in to the server (Unauthorized)
+0
+time="2021-12-09T09:48:13Z" level=fatal msg="Password is required."
+Number of PVC's in tkg-cluster6 of NS wcpns4
+error: You must be logged in to the server (Unauthorized)
+0
+Finished: SUCCESS

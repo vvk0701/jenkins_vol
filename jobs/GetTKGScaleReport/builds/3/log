@@ -1,0 +1,91 @@
+Started by user [8mha:////4O+7WaZrdeuSXCe13zffueChRTst+GL3EjqzTUZ1m63dAAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgYe/dLi1CL90qTSvJJSAHVI/MXBAAAA[0mvivek
+Rebuilds build #[8mha:////4DQsshhwTojPhg4YJCZkZOwuvm+/MSkLfpIjaJWd4dWTAAAAox+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBgn9rPwkfffUkhBv9+DkxJzUoNSC/KISfSMAPlSmeM0AAAA=[0m2
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/GetTKGScaleReport
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential b5a1582a-99cd-4025-8bc5-17c5131dabb3
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/GetTKGScaleReport/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/vvk0701/vmc_vvk # timeout=10
+Fetching upstream changes from https://github.com/vvk0701/vmc_vvk
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- https://github.com/vvk0701/vmc_vvk +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision f8e726540abd461e2d9fd60be9b314a06c8c1db4 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f f8e726540abd461e2d9fd60be9b314a06c8c1db4 # timeout=10
+Commit message: "Update scale_report.sh"
+ > git rev-list --no-walk f8e726540abd461e2d9fd60be9b314a06c8c1db4 # timeout=10
+[GetTKGScaleReport] $ /bin/sh -xe /tmp/jenkins5489285514003248578.sh
++ chmod 777 scale_report.sh
++ ./scale_report.sh hpYFENBimZg!+47
+Switched to context "192.168.123.2".
+=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#>
+Number of NameSpaces: 
+9
+Number of TKC Clusters: 
+49
++#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
+NAMESPACE   NAME            CONTROL PLANE   WORKER   TKR NAME                           AGE     READY   TKR COMPATIBLE   UPDATES AVAILABLE
+wcpns1      tkg-cluster1    3               46       v1.20.7---vmware.1-tkg.1.7fb9067   2d13h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns2      tkg-cluster2    3               46       v1.20.7---vmware.1-tkg.1.7fb9067   2d13h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns3      tkg-cluster3    3               46       v1.20.7---vmware.1-tkg.1.7fb9067   2d12h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns4      tkg-cluster10   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d12h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns4      tkg-cluster11   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d12h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns4      tkg-cluster12   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d12h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns4      tkg-cluster13   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d12h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns4      tkg-cluster14   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d12h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns4      tkg-cluster15   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d12h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns4      tkg-cluster16   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d11h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns4      tkg-cluster17   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d11h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns4      tkg-cluster18   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d11h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns4      tkg-cluster19   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d11h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns4      tkg-cluster20   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d11h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns4      tkg-cluster21   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d11h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns4      tkg-cluster22   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d11h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns4      tkg-cluster23   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d11h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns4      tkg-cluster24   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d11h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns4      tkg-cluster4    3               46       v1.20.7---vmware.1-tkg.1.7fb9067   2d12h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns4      tkg-cluster6    1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d12h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns4      tkg-cluster7    1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d12h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns4      tkg-cluster8    1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d12h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns4      tkg-cluster9    1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d12h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns5      tkg-cluster25   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d11h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns5      tkg-cluster26   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d11h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns5      tkg-cluster27   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d11h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns5      tkg-cluster28   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d11h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns5      tkg-cluster29   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d11h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns5      tkg-cluster30   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d11h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns5      tkg-cluster31   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d10h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns5      tkg-cluster32   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d10h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns5      tkg-cluster33   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d10h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns5      tkg-cluster34   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d10h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns5      tkg-cluster35   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d10h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns5      tkg-cluster36   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d10h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns5      tkg-cluster37   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d10h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns5      tkg-cluster38   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d10h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns5      tkg-cluster39   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d10h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns5      tkg-cluster40   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d10h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns5      tkg-cluster41   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d10h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns5      tkg-cluster42   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d10h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns5      tkg-cluster43   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d10h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns5      tkg-cluster44   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d10h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns5      tkg-cluster45   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d9h    True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns5      tkg-cluster46   1               4        v1.20.7---vmware.1-tkg.1.7fb9067   2d9h    True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns5      tkg-cluster5    3               46       v1.20.7---vmware.1-tkg.1.7fb9067   2d12h   True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns7      tkg-cluster49   3               150      v1.20.7---vmware.1-tkg.1.7fb9067   2d9h    True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns8      tkg-cluster48   3               150      v1.20.7---vmware.1-tkg.1.7fb9067   2d9h    True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
+wcpns9      tkg-cluster47   3               150      v1.20.7---vmware.1-tkg.1.7fb9067   2d9h    True    True             [1.21.2+vmware.1-tkg.1.ee25d55]
++#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
+Login to Large TKC Cluster
+Number of Running Nginx Pods: 
+12000
+Number of Nginx pods in Pending state: 
+0
+Number of PVC's in tkg-cluster6 of NS wcpns4
+No resources found
+0
+Finished: SUCCESS
