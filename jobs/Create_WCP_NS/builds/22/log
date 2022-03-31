@@ -1,0 +1,13 @@
+Started by user [8mha:////4O+7WaZrdeuSXCe13zffueChRTst+GL3EjqzTUZ1m63dAAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgYe/dLi1CL90qTSvJJSAHVI/MXBAAAA[0mvivek
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/Create_WCP_NS
+[Create_WCP_NS] $ /bin/bash /tmp/jenkins16186152774610193552.sh
+pDv*xLYLi1y0-ZQ
+Warning: Output is not to a terminal (fd=2).
+[0m[?7h[0;31mError: HTTPSConnectionPool(host='vcenter.sddc-44-226-126-127.vmwarevmc.com', port=443): Max retries exceeded with url: /api (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f2c93382280>: Failed to establish a new connection: [Errno 110] Connection timed out'))[0m
+[0m[0m[?7h[0mFor usage type: dcli --help[0m
+[0mStorage policy ID = 
+Cluster ID = 
+Build was aborted
+Aborted by [8mha:////4O+7WaZrdeuSXCe13zffueChRTst+GL3EjqzTUZ1m63dAAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgYe/dLi1CL90qTSvJJSAHVI/MXBAAAA[0mvivek
+Finished: ABORTED

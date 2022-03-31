@@ -1,0 +1,102 @@
+Started by user [8mha:////4O+7WaZrdeuSXCe13zffueChRTst+GL3EjqzTUZ1m63dAAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgYe/dLi1CL90qTSvJJSAHVI/MXBAAAA[0mvivek
+Rebuilds build #[8mha:////4Fp6/n3nnlWaDr6CIQZsE4vlCbdUpcbS9ZBjfSiJJX2eAAAAnR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAwmoBn6WflJ+s5FqYklqfEBYc76hiYANSWjQ8cAAAA=[0m14
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/Create_PVC
+The recommended git tool is: NONE
+Warning: CredentialId "34bb70bf-146d-499d-8b6e-8f77afbadb33" could not be found.
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/Create_PVC/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/vvk0701/vmc_vvk # timeout=10
+Fetching upstream changes from https://github.com/vvk0701/vmc_vvk
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+ > git fetch --tags --force --progress -- https://github.com/vvk0701/vmc_vvk +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision a4e91f53c642b2e04c9243b8c370b78f75761a6d (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f a4e91f53c642b2e04c9243b8c370b78f75761a6d # timeout=10
+Commit message: "Update createpvc.sh"
+ > git rev-list --no-walk a4e91f53c642b2e04c9243b8c370b78f75761a6d # timeout=10
+[Create_PVC] $ /bin/sh -xe /tmp/jenkins17605189580027501958.sh
++ export KUBECTL_VSPHERE_PASSWORD=pDv*xLYLi1y0-ZQ
++ kubectl vsphere login --server=k8s.Cluster-1.vcenter.sddc-44-226-126-127.vmwarevmc.com -u cloudadmin@vmc.local
+
+Logged in successfully.
+
+You have access to the following contexts:
+   k8s.Cluster-1.vcenter.sddc-44-226-126-127.vmwarevmc.com
+   ssns1
+   tkg-cluster1
+   tkg-cluster10
+   tkg-cluster11
+   tkg-cluster2
+   tkg-cluster25
+   tkg-cluster26
+   tkg-cluster27
+   tkg-cluster28
+   tkg-cluster29
+   tkg-cluster3
+   tkg-cluster30
+   tkg-cluster31
+   tkg-cluster47
+   tkg-cluster48
+   tkg-cluster49
+   tkg-cluster50
+   wcpns1
+   wcpns10
+   wcpns2
+   wcpns3
+   wcpns4
+   wcpns5
+   wcpns6
+   wcpns7
+   wcpns8
+   wcpns9
+
+If the context you wish to use is not in this list, you may need to try
+logging in again later, or contact your cluster administrator.
+
+To change context, use `kubectl config use-context <workload name>`
++ chmod 777 createpvc.sh
++ ./createpvc.sh wcpns1
++ ns=wcpns1
++ (( j=1 ))
++ (( j<=60 ))
++ pvc_name=pvc1
+++ sed 's/{{ns}}/wcpns1/g'
+++ sed 's/{{pvc_name}}/pvc1/g'
+++ cat pvc.yaml
++ template='apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc1
+  namespace: wcpns1
+  annotations:
+    volume.beta.kubernetes.io/storage-class: vmc-workload-storage-policy-cluster-1
+  labels:
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Mi
+  storageClassName: vmc-workload-storage-policy-cluster-1'
++ kubectl apply -f -
++ echo 'apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc1
+  namespace: wcpns1
+  annotations:
+    volume.beta.kubernetes.io/storage-class: vmc-workload-storage-policy-cluster-1
+  labels:
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Mi
+  storageClassName: vmc-workload-storage-policy-cluster-1'
+error: You must be logged in to the server (the server has asked for the client to provide credentials)
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

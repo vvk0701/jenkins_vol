@@ -24,6 +24,10 @@
           <defaultValue>50</defaultValue>
           <trim>false</trim>
         </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>SV_Hostname</name>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
   </properties>
@@ -53,9 +57,9 @@
   <builders>
     <hudson.tasks.Shell>
       <command>export KUBECTL_VSPHERE_PASSWORD=$Kubectl_Password
-kubectl vsphere login --server=192.168.123.2 -u cloudadmin@vmc.local --insecure-skip-tls-verify
+kubectl vsphere login --server=$SV_Hostname -u cloudadmin@vmc.local
 kubectl get pods -A
-kubectl config use-context 192.168.123.2;
+kubectl config use-context $SV_Hostname
 chmod 777 createtkgclusters.sh 
 ./createtkgclusters.sh $start_tkg_cluster_number $end_tkg_cluster_number;
 </command>

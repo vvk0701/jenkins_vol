@@ -1,0 +1,28 @@
+Started by user [8mha:////4O+7WaZrdeuSXCe13zffueChRTst+GL3EjqzTUZ1m63dAAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgYe/dLi1CL90qTSvJJSAHVI/MXBAAAA[0mvivek
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/Create_PVC
+The recommended git tool is: NONE
+Warning: CredentialId "34bb70bf-146d-499d-8b6e-8f77afbadb33" could not be found.
+Cloning the remote Git repository
+Cloning repository https://github.com/vvk0701/vmc_vvk
+ > git init /var/jenkins_home/workspace/Create_PVC # timeout=10
+Fetching upstream changes from https://github.com/vvk0701/vmc_vvk
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+ > git fetch --tags --force --progress -- https://github.com/vvk0701/vmc_vvk +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/vvk0701/vmc_vvk # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 1c2f140bf61ea3eb7f0218576dccdb3c48612bf2 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 1c2f140bf61ea3eb7f0218576dccdb3c48612bf2 # timeout=10
+Commit message: "Update gcm46.yaml"
+ > git rev-list --no-walk beb54915e1a9aff54637dc266a701afa75f2a3f7 # timeout=10
+[Create_PVC] $ /bin/sh -xe /tmp/jenkins6108916299610024131.sh
++ export KUBECTL_VSPHERE_PASSWORD=pDv*xLYLi1y0-ZQ
++ kubectl vsphere login --server=192.168.123.2 -u cloudadmin@vmc.local --insecure-skip-tls-verify --tanzu-kubernetes-cluster-name tkg-cluster30 --tanzu-kubernetes-cluster-namespace wcpns5
+Terminated
+Build was aborted
+Aborted by [8mha:////4O+7WaZrdeuSXCe13zffueChRTst+GL3EjqzTUZ1m63dAAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgYe/dLi1CL90qTSvJJSAHVI/MXBAAAA[0mvivek
+Finished: ABORTED

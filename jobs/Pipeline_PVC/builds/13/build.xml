@@ -1,0 +1,89 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@2.42">
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>ubuntu</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+        <entry>
+          <com.sonyericsson.rebuild.RebuildCause plugin="rebuild@1.32">
+            <upstreamProject>Pipeline_PVC</upstreamProject>
+            <upstreamUrl>job/Pipeline_PVC/</upstreamUrl>
+            <upstreamBuild>12</upstreamBuild>
+            <upstreamCauses>
+              <hudson.model.Cause_-UserIdCause>
+                <userId>ubuntu</userId>
+              </hudson.model.Cause_-UserIdCause>
+              <hudson.model.Cause_-UpstreamCause>
+                <upstreamProject>Pipeline_PVC</upstreamProject>
+                <upstreamUrl>job/Pipeline_PVC/</upstreamUrl>
+                <upstreamBuild>11</upstreamBuild>
+                <upstreamCauses>
+                  <hudson.model.Cause_-UserIdCause>
+                    <userId>ubuntu</userId>
+                  </hudson.model.Cause_-UserIdCause>
+                  <hudson.model.Cause_-UpstreamCause>
+                    <upstreamProject>Pipeline_PVC</upstreamProject>
+                    <upstreamUrl>job/Pipeline_PVC/</upstreamUrl>
+                    <upstreamBuild>10</upstreamBuild>
+                    <upstreamCauses>
+                      <hudson.model.Cause_-UserIdCause>
+                        <userId>ubuntu</userId>
+                      </hudson.model.Cause_-UserIdCause>
+                    </upstreamCauses>
+                  </hudson.model.Cause_-UpstreamCause>
+                </upstreamCauses>
+              </hudson.model.Cause_-UpstreamCause>
+            </upstreamCauses>
+          </com.sonyericsson.rebuild.RebuildCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <hudson.model.ParametersAction>
+      <safeParameters class="sorted-set"/>
+      <parameters>
+        <hudson.model.BooleanParameterValue>
+          <name>dryrun</name>
+          <description>Boolean flag for populating params</description>
+          <value>false</value>
+        </hudson.model.BooleanParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>SV_Hostname</name>
+          <description>Enter Supervisor Cluster Hostname</description>
+          <value>k8s.Cluster-1.vcenter.sddc-44-226-126-127.vmwarevmc.com</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>Kubectl_Password</name>
+          <description>Enter Password from Cloudadmin user</description>
+          <value>pDv*xLYLi1y0-ZQ</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>ns_count</name>
+          <description>Enter  WCP Namespace Where PVCs have to created</description>
+          <value>10</value>
+        </hudson.model.StringParameterValue>
+      </parameters>
+      <parameterDefinitionNames>
+        <string>dryrun</string>
+        <string>SV_Hostname</string>
+        <string>Kubectl_Password</string>
+        <string>ns_count</string>
+      </parameterDefinitionNames>
+    </hudson.model.ParametersAction>
+    <com.sonyericsson.rebuild.RebuildAction plugin="rebuild@1.32"/>
+  </actions>
+  <queueId>34</queueId>
+  <timestamp>1648668120839</timestamp>
+  <startTime>1648668120845</startTime>
+  <result>FAILURE</result>
+  <duration>742</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <completed>true</completed>
+  <checkouts class="hudson.util.PersistedList"/>
+</flow-build>

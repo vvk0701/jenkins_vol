@@ -1,0 +1,27 @@
+Started by user [8mha:////4O+7WaZrdeuSXCe13zffueChRTst+GL3EjqzTUZ1m63dAAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgYe/dLi1CL90qTSvJJSAHVI/MXBAAAA[0mvivek
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/Create_TKG_Cluster
+The recommended git tool is: NONE
+using credential b5a1582a-99cd-4025-8bc5-17c5131dabb3
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/Create_TKG_Cluster/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/vvk0701/vmc_vvk # timeout=10
+Fetching upstream changes from https://github.com/vvk0701/vmc_vvk
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- https://github.com/vvk0701/vmc_vvk +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 1c2f140bf61ea3eb7f0218576dccdb3c48612bf2 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 1c2f140bf61ea3eb7f0218576dccdb3c48612bf2 # timeout=10
+Commit message: "Update gcm46.yaml"
+ > git rev-list --no-walk 1c2f140bf61ea3eb7f0218576dccdb3c48612bf2 # timeout=10
+[Create_TKG_Cluster] $ /bin/sh -xe /tmp/jenkins1326303899980821898.sh
++ export KUBECTL_VSPHERE_PASSWORD=pDv*xLYLi1y0-ZQ
++ kubectl vsphere login --server=10.73.3.215 -u cloudadmin@vmc.local --insecure-skip-tls-verify
+time="2022-03-26T05:43:19Z" level=error msg="Error occurred during HTTP request: Get \"https://10.73.3.215/wcp/loginbanner\": dial tcp 10.73.3.215:443: connect: connection timed out"
+There was an error when trying to connect to the server.\n
+Please check the server URL and try again.time="2022-03-26T05:43:19Z" level=fatal msg="Error while connecting to host 10.73.3.215: Get \"https://10.73.3.215/wcp/loginbanner\": dial tcp 10.73.3.215:443: connect: connection timed out."
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

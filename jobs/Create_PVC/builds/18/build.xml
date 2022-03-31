@@ -1,0 +1,165 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<build>
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <org.jenkinsci.plugins.workflow.support.steps.build.BuildUpstreamCause plugin="pipeline-build-step@2.15">
+            <upstreamProject>Pipeline_PVC</upstreamProject>
+            <upstreamUrl>job/Pipeline_PVC/</upstreamUrl>
+            <upstreamBuild>17</upstreamBuild>
+            <upstreamCauses>
+              <hudson.model.Cause_-UserIdCause>
+                <userId>ubuntu</userId>
+              </hudson.model.Cause_-UserIdCause>
+              <hudson.model.Cause_-UpstreamCause>
+                <upstreamProject>Pipeline_PVC</upstreamProject>
+                <upstreamUrl>job/Pipeline_PVC/</upstreamUrl>
+                <upstreamBuild>16</upstreamBuild>
+                <upstreamCauses>
+                  <hudson.model.Cause_-UserIdCause>
+                    <userId>ubuntu</userId>
+                  </hudson.model.Cause_-UserIdCause>
+                  <hudson.model.Cause_-UpstreamCause>
+                    <upstreamProject>Pipeline_PVC</upstreamProject>
+                    <upstreamUrl>job/Pipeline_PVC/</upstreamUrl>
+                    <upstreamBuild>15</upstreamBuild>
+                    <upstreamCauses>
+                      <hudson.model.Cause_-UserIdCause>
+                        <userId>ubuntu</userId>
+                      </hudson.model.Cause_-UserIdCause>
+                      <hudson.model.Cause_-UpstreamCause>
+                        <upstreamProject>Pipeline_PVC</upstreamProject>
+                        <upstreamUrl>job/Pipeline_PVC/</upstreamUrl>
+                        <upstreamBuild>14</upstreamBuild>
+                        <upstreamCauses>
+                          <hudson.model.Cause_-UserIdCause>
+                            <userId>ubuntu</userId>
+                          </hudson.model.Cause_-UserIdCause>
+                          <hudson.model.Cause_-UpstreamCause>
+                            <upstreamProject>Pipeline_PVC</upstreamProject>
+                            <upstreamUrl>job/Pipeline_PVC/</upstreamUrl>
+                            <upstreamBuild>13</upstreamBuild>
+                            <upstreamCauses>
+                              <hudson.model.Cause_-UserIdCause>
+                                <userId>ubuntu</userId>
+                              </hudson.model.Cause_-UserIdCause>
+                              <hudson.model.Cause_-UpstreamCause>
+                                <upstreamProject>Pipeline_PVC</upstreamProject>
+                                <upstreamUrl>job/Pipeline_PVC/</upstreamUrl>
+                                <upstreamBuild>12</upstreamBuild>
+                                <upstreamCauses>
+                                  <hudson.model.Cause_-UserIdCause>
+                                    <userId>ubuntu</userId>
+                                  </hudson.model.Cause_-UserIdCause>
+                                  <hudson.model.Cause_-UpstreamCause>
+                                    <upstreamProject>Pipeline_PVC</upstreamProject>
+                                    <upstreamUrl>job/Pipeline_PVC/</upstreamUrl>
+                                    <upstreamBuild>11</upstreamBuild>
+                                    <upstreamCauses>
+                                      <hudson.model.Cause_-UserIdCause>
+                                        <userId>ubuntu</userId>
+                                      </hudson.model.Cause_-UserIdCause>
+                                      <hudson.model.Cause_-UpstreamCause>
+                                        <upstreamProject>Pipeline_PVC</upstreamProject>
+                                        <upstreamUrl>job/Pipeline_PVC/</upstreamUrl>
+                                        <upstreamBuild>10</upstreamBuild>
+                                        <upstreamCauses>
+                                          <hudson.model.Cause_-UserIdCause>
+                                            <userId>ubuntu</userId>
+                                          </hudson.model.Cause_-UserIdCause>
+                                        </upstreamCauses>
+                                      </hudson.model.Cause_-UpstreamCause>
+                                    </upstreamCauses>
+                                  </hudson.model.Cause_-UpstreamCause>
+                                </upstreamCauses>
+                              </hudson.model.Cause_-UpstreamCause>
+                            </upstreamCauses>
+                          </hudson.model.Cause_-UpstreamCause>
+                        </upstreamCauses>
+                      </hudson.model.Cause_-UpstreamCause>
+                    </upstreamCauses>
+                  </hudson.model.Cause_-UpstreamCause>
+                </upstreamCauses>
+              </hudson.model.Cause_-UpstreamCause>
+            </upstreamCauses>
+            <nodeId>25</nodeId>
+          </org.jenkinsci.plugins.workflow.support.steps.build.BuildUpstreamCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <org.jenkinsci.plugins.workflow.support.steps.build.BuildUpstreamNodeAction plugin="pipeline-build-step@2.15">
+      <upstreamNodeId>25</upstreamNodeId>
+      <upstreamRunId>Pipeline_PVC#17</upstreamRunId>
+    </org.jenkinsci.plugins.workflow.support.steps.build.BuildUpstreamNodeAction>
+    <hudson.model.ParametersAction>
+      <safeParameters class="sorted-set"/>
+      <parameters>
+        <hudson.model.StringParameterValue>
+          <name>Kubectl_Password</name>
+          <description></description>
+          <value>pDv*xLYLi1y0-ZQ</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>wcpns</name>
+          <description></description>
+          <value>wcpns2</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>SV_Hostname</name>
+          <description></description>
+          <value>k8s.Cluster-1.vcenter.sddc-44-226-126-127.vmwarevmc.com</value>
+        </hudson.model.StringParameterValue>
+      </parameters>
+      <parameterDefinitionNames>
+        <string>Kubectl_Password</string>
+        <string>wcpns</string>
+        <string>SV_Hostname</string>
+      </parameterDefinitionNames>
+    </hudson.model.ParametersAction>
+    <hudson.plugins.git.util.BuildData plugin="git@4.9.0">
+      <buildsByBranchName>
+        <entry>
+          <string>refs/remotes/origin/main</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@3.10.0">
+              <sha1>dcd4d462da0a9a93f63bb9b0ccac33e2ae2c8b4c</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/remotes/origin/main</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision reference="../marked"/>
+            <hudsonBuildNumber>18</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+      </buildsByBranchName>
+      <lastBuild reference="../buildsByBranchName/entry/hudson.plugins.git.util.Build"/>
+      <remoteUrls>
+        <string>https://github.com/vvk0701/vmc_vvk</string>
+      </remoteUrls>
+    </hudson.plugins.git.util.BuildData>
+    <hudson.scm.SCMRevisionState_-None/>
+    <com.sonyericsson.rebuild.RebuildAction plugin="rebuild@1.32"/>
+  </actions>
+  <queueId>43</queueId>
+  <timestamp>1648675578393</timestamp>
+  <startTime>1648675578399</startTime>
+  <result>SUCCESS</result>
+  <duration>7014985</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>/var/jenkins_home/workspace/Create_PVC</workspace>
+  <hudsonVersion>2.339</hudsonVersion>
+  <scm class="hudson.plugins.git.GitChangeLogParser" plugin="git@4.9.0">
+    <authorOrCommitter>false</authorOrCommitter>
+    <showEntireCommitSummaryInChanges>true</showEntireCommitSummaryInChanges>
+  </scm>
+  <culprits class="java.util.Collections$UnmodifiableSet">
+    <c class="sorted-set"/>
+  </culprits>
+</build>

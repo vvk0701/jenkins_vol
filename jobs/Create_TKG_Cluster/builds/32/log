@@ -1,0 +1,130 @@
+Started by user [8mha:////4O+7WaZrdeuSXCe13zffueChRTst+GL3EjqzTUZ1m63dAAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgYe/dLi1CL90qTSvJJSAHVI/MXBAAAA[0mvivek
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/Create_TKG_Cluster
+The recommended git tool is: NONE
+using credential b5a1582a-99cd-4025-8bc5-17c5131dabb3
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/Create_TKG_Cluster/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/vvk0701/vmc_vvk # timeout=10
+Fetching upstream changes from https://github.com/vvk0701/vmc_vvk
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- https://github.com/vvk0701/vmc_vvk +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 1c2f140bf61ea3eb7f0218576dccdb3c48612bf2 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 1c2f140bf61ea3eb7f0218576dccdb3c48612bf2 # timeout=10
+Commit message: "Update gcm46.yaml"
+ > git rev-list --no-walk 1c2f140bf61ea3eb7f0218576dccdb3c48612bf2 # timeout=10
+[Create_TKG_Cluster] $ /bin/sh -xe /tmp/jenkins17655219819261476509.sh
++ export KUBECTL_VSPHERE_PASSWORD=pDv*xLYLi1y0-ZQ
++ kubectl vsphere login --server=https://k8s.Cluster-1.vcenter.sddc-44-226-126-127.vmwarevmc.com -u cloudadmin@vmc.local
+
+Logged in successfully.
+
+You have access to the following contexts:
+   k8s.Cluster-1.vcenter.sddc-44-226-126-127.vmwarevmc.com
+   ssns1
+   wcpns1
+   wcpns10
+   wcpns2
+   wcpns3
+   wcpns4
+   wcpns5
+   wcpns6
+   wcpns7
+   wcpns8
+   wcpns9
+
+If the context you wish to use is not in this list, you may need to try
+logging in again later, or contact your cluster administrator.
+
+To change context, use `kubectl config use-context <workload name>`
++ kubectl get pods -A
+NAMESPACE                                   NAME                                                              READY   STATUS      RESTARTS   AGE
+kube-system                                 coredns-689d589965-445qm                                          1/1     Running     0          6d17h
+kube-system                                 coredns-689d589965-95tzj                                          1/1     Running     5          6d17h
+kube-system                                 coredns-689d589965-fkvk2                                          1/1     Running     0          6d17h
+kube-system                                 docker-registry-42241825dcacfac4072f2d89c1d2d1ac                  1/1     Running     0          6d17h
+kube-system                                 docker-registry-42244bccfb28a113f56df00ec80b05f7                  1/1     Running     0          6d17h
+kube-system                                 docker-registry-4224dcf7cda80e6fc81a793f8ba47481                  1/1     Running     0          6d17h
+kube-system                                 etcd-42241825dcacfac4072f2d89c1d2d1ac                             1/1     Running     0          6d17h
+kube-system                                 etcd-42244bccfb28a113f56df00ec80b05f7                             1/1     Running     0          6d17h
+kube-system                                 etcd-4224dcf7cda80e6fc81a793f8ba47481                             1/1     Running     0          6d17h
+kube-system                                 kube-apiserver-42241825dcacfac4072f2d89c1d2d1ac                   1/1     Running     3          6d17h
+kube-system                                 kube-apiserver-42244bccfb28a113f56df00ec80b05f7                   1/1     Running     2          6d17h
+kube-system                                 kube-apiserver-4224dcf7cda80e6fc81a793f8ba47481                   1/1     Running     2          6d17h
+kube-system                                 kube-controller-manager-42241825dcacfac4072f2d89c1d2d1ac          1/1     Running     0          6d17h
+kube-system                                 kube-controller-manager-42244bccfb28a113f56df00ec80b05f7          1/1     Running     1          6d17h
+kube-system                                 kube-controller-manager-4224dcf7cda80e6fc81a793f8ba47481          1/1     Running     2          6d17h
+kube-system                                 kube-proxy-9vktc                                                  1/1     Running     0          6d17h
+kube-system                                 kube-proxy-jk9rb                                                  1/1     Running     0          6d17h
+kube-system                                 kube-proxy-jmdn6                                                  1/1     Running     0          6d17h
+kube-system                                 kube-scheduler-42241825dcacfac4072f2d89c1d2d1ac                   2/2     Running     3          6d17h
+kube-system                                 kube-scheduler-42244bccfb28a113f56df00ec80b05f7                   2/2     Running     1          6d17h
+kube-system                                 kube-scheduler-4224dcf7cda80e6fc81a793f8ba47481                   2/2     Running     6          6d17h
+kube-system                                 kubectl-plugin-vsphere-42241825dcacfac4072f2d89c1d2d1ac           1/1     Running     3          6d17h
+kube-system                                 kubectl-plugin-vsphere-42244bccfb28a113f56df00ec80b05f7           1/1     Running     3          6d17h
+kube-system                                 kubectl-plugin-vsphere-4224dcf7cda80e6fc81a793f8ba47481           1/1     Running     4          6d17h
+kube-system                                 wcp-authproxy-42241825dcacfac4072f2d89c1d2d1ac                    1/1     Running     0          6d17h
+kube-system                                 wcp-authproxy-42244bccfb28a113f56df00ec80b05f7                    1/1     Running     0          6d17h
+kube-system                                 wcp-authproxy-4224dcf7cda80e6fc81a793f8ba47481                    1/1     Running     0          6d17h
+kube-system                                 wcp-fip-42241825dcacfac4072f2d89c1d2d1ac                          1/1     Running     0          6d17h
+kube-system                                 wcp-fip-42244bccfb28a113f56df00ec80b05f7                          1/1     Running     0          6d17h
+kube-system                                 wcp-fip-4224dcf7cda80e6fc81a793f8ba47481                          1/1     Running     0          6d17h
+svc-tmc-c45                                 tmc-agent-installer-27471231-rh4vq                                0/1     Completed   0          21s
+vmware-system-appplatform-operator-system   vmware-system-appplatform-operator-mgr-0                          1/1     Running     0          6d17h
+vmware-system-capw                          capi-controller-manager-648fbc5dd6-hcgfk                          2/2     Running     1          6d17h
+vmware-system-capw                          capi-controller-manager-648fbc5dd6-pl9lj                          2/2     Running     3          6d17h
+vmware-system-capw                          capi-controller-manager-648fbc5dd6-wqmzv                          2/2     Running     0          6d17h
+vmware-system-capw                          capi-kubeadm-bootstrap-controller-manager-6d85654fdd-6gmbb        2/2     Running     1          6d17h
+vmware-system-capw                          capi-kubeadm-bootstrap-controller-manager-6d85654fdd-9fm6d        2/2     Running     1          6d17h
+vmware-system-capw                          capi-kubeadm-bootstrap-controller-manager-6d85654fdd-t8vwk        2/2     Running     3          6d17h
+vmware-system-capw                          capi-kubeadm-control-plane-controller-manager-699d7cb5dc-4tc5x    2/2     Running     1          6d17h
+vmware-system-capw                          capi-kubeadm-control-plane-controller-manager-699d7cb5dc-kk72f    2/2     Running     0          6d17h
+vmware-system-capw                          capi-kubeadm-control-plane-controller-manager-699d7cb5dc-r7lsz    2/2     Running     0          6d17h
+vmware-system-capw                          capw-controller-manager-7d848b5c49-cnfkc                          2/2     Running     0          6d17h
+vmware-system-capw                          capw-controller-manager-7d848b5c49-fnd6j                          2/2     Running     3          6d17h
+vmware-system-capw                          capw-controller-manager-7d848b5c49-h8s6r                          2/2     Running     3          6d17h
+vmware-system-capw                          capw-webhook-c9ff4c594-f8wgb                                      2/2     Running     1          6d17h
+vmware-system-capw                          capw-webhook-c9ff4c594-h289t                                      2/2     Running     0          6d17h
+vmware-system-capw                          capw-webhook-c9ff4c594-sjxzs                                      2/2     Running     1          6d17h
+vmware-system-cert-manager                  cert-manager-5dcbbf94ff-7qjs4                                     1/1     Running     0          6d17h
+vmware-system-cert-manager                  cert-manager-cainjector-6b68d75557-h4tqd                          1/1     Running     3          6d17h
+vmware-system-cert-manager                  cert-manager-webhook-569c7bb859-qdst4                             1/1     Running     0          6d17h
+vmware-system-csi                           vsphere-csi-controller-794dfb6998-85fng                           6/6     Running     11         6d17h
+vmware-system-kubeimage                     image-controller-5b46666fbd-nb8b2                                 1/1     Running     1          6d17h
+vmware-system-license-operator              vmware-system-license-operator-controller-manager-7d6979c87mr9p   1/1     Running     0          6d17h
+vmware-system-license-operator              vmware-system-license-operator-controller-manager-7d6979c8bwmks   1/1     Running     0          6d17h
+vmware-system-license-operator              vmware-system-license-operator-controller-manager-7d6979c8tb5pb   1/1     Running     0          6d17h
+vmware-system-monitoring                    telegraf-4mm65                                                    2/2     Running     0          17h
+vmware-system-monitoring                    telegraf-f4swz                                                    2/2     Running     0          17h
+vmware-system-monitoring                    telegraf-scttg                                                    2/2     Running     0          17h
+vmware-system-nsop                          vmware-system-nsop-controller-manager-54658dd74d-7ltpf            1/1     Running     1          6d17h
+vmware-system-nsop                          vmware-system-nsop-controller-manager-54658dd74d-ld5q6            1/1     Running     3          6d17h
+vmware-system-nsop                          vmware-system-nsop-controller-manager-54658dd74d-qh6vz            1/1     Running     1          6d17h
+vmware-system-nsx                           nsx-ncp-d6c9c9cd5-f5gfb                                           1/1     Running     4          6d17h
+vmware-system-registry                      vmware-registry-controller-manager-65dd486b49-wfz7p               2/2     Running     3          6d17h
+vmware-system-tkg                           masterproxy-tkgs-plugin-6fgff                                     1/1     Running     0          6d17h
+vmware-system-tkg                           masterproxy-tkgs-plugin-b88md                                     1/1     Running     0          6d17h
+vmware-system-tkg                           masterproxy-tkgs-plugin-h2gf7                                     1/1     Running     0          6d17h
+vmware-system-tkg                           tkgs-plugin-server-85f4fcb665-42bnw                               1/1     Running     1          6d17h
+vmware-system-tkg                           tkgs-plugin-server-85f4fcb665-jjh24                               1/1     Running     0          6d17h
+vmware-system-tkg                           tkgs-plugin-server-85f4fcb665-tkhsc                               1/1     Running     1          6d17h
+vmware-system-tkg                           vmware-system-tkg-controller-manager-5c87dbbcc6-chz5p             2/2     Running     2          6d17h
+vmware-system-tkg                           vmware-system-tkg-controller-manager-5c87dbbcc6-kv7lg             2/2     Running     0          6d17h
+vmware-system-tkg                           vmware-system-tkg-controller-manager-5c87dbbcc6-vhqfc             2/2     Running     3          6d17h
+vmware-system-tkg                           vmware-system-tkg-webhook-748df489cf-ctf8s                        2/2     Running     0          6d17h
+vmware-system-tkg                           vmware-system-tkg-webhook-748df489cf-mwjln                        2/2     Running     0          6d17h
+vmware-system-tkg                           vmware-system-tkg-webhook-748df489cf-w5d96                        2/2     Running     0          6d17h
+vmware-system-ucs                           upgrade-compatibility-service-74fd856bcd-dvd6c                    1/1     Running     0          6d17h
+vmware-system-ucs                           upgrade-compatibility-service-74fd856bcd-lvdtx                    1/1     Running     0          6d17h
+vmware-system-ucs                           upgrade-compatibility-service-74fd856bcd-wcr2l                    1/1     Running     0          6d17h
+vmware-system-vmop                          vmware-system-vmop-controller-manager-5b9f4dff5f-2ljn5            2/2     Running     4          6d17h
+vmware-system-vmop                          vmware-system-vmop-controller-manager-5b9f4dff5f-m85tg            2/2     Running     3          6d17h
+vmware-system-vmop                          vmware-system-vmop-controller-manager-5b9f4dff5f-tl9xk            2/2     Running     0          6d17h
++ kubectl config use-context https://k8s.Cluster-1.vcenter.sddc-44-226-126-127.vmwarevmc.com
+error: no context exists with the name: "https://k8s.Cluster-1.vcenter.sddc-44-226-126-127.vmwarevmc.com"
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

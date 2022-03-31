@@ -1,0 +1,27 @@
+Started by user [8mha:////4O+7WaZrdeuSXCe13zffueChRTst+GL3EjqzTUZ1m63dAAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgYe/dLi1CL90qTSvJJSAHVI/MXBAAAA[0mvivek
+Rebuilds build #[8mha:////4EGYIqbbrDC+GfAc0NHnP4LJgbSb8oRqjICBXF7LFwYUAAAAoR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBjH9rPwkfeei1MSS1PiA/JTg5MScVH0LALJvba7LAAAA[0m8
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/Create_PodScale
+The recommended git tool is: NONE
+using credential b5a1582a-99cd-4025-8bc5-17c5131dabb3
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/Create_PodScale/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/vvk0701/vmc_vvk # timeout=10
+Fetching upstream changes from https://github.com/vvk0701/vmc_vvk
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- https://github.com/vvk0701/vmc_vvk +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 1c2f140bf61ea3eb7f0218576dccdb3c48612bf2 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 1c2f140bf61ea3eb7f0218576dccdb3c48612bf2 # timeout=10
+Commit message: "Update gcm46.yaml"
+ > git rev-list --no-walk 1c2f140bf61ea3eb7f0218576dccdb3c48612bf2 # timeout=10
+[Create_PodScale] $ /bin/sh -xe /tmp/jenkins9992700871062214430.sh
++ export KUBECTL_VSPHERE_PASSWORD=K0I*oX0kyPj*nKB
++ kubectl vsphere login --server=https://k8s.Cluster-1.vcenter.sddc-44-226-126-127.vmwarevmc.com -u cloudadmin@vmc.local --tanzu-kubernetes-cluster-name tkg-cluster49 --tanzu-kubernetes-cluster-namespace wcpns7
+
+time="2022-03-26T10:51:08Z" level=fatal msg="Failed to get available workloads: invalid or missing credentials"
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE
